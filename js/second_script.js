@@ -60,8 +60,6 @@ function minesInTheField(){
   return mines;
 }
 
-
-
 var mines = minesInTheField();
 console.log(mines);
 
@@ -72,7 +70,7 @@ console.log(mines);
 function mineFieldGame(){
 
   var steps = [];
-  var punteggio = steps.length + 1;
+  // var punteggio = steps.length;
   for (i = 0; i < 10; i++){
 
     var playerNum = parseInt(prompt("muovi un passo nel campo minato, inserisci un numero compreso tra 1 e 20"));
@@ -86,8 +84,8 @@ function mineFieldGame(){
     if (mines.includes(playerNum)){
 
       alert("Ooops! You Loose");
-      console.log(steps, punteggio);
-      break;
+      console.log(steps);
+      return console.log(" il tuo punteggio è " + steps.length);
     } else {
 
       steps.push(playerNum);
@@ -95,8 +93,10 @@ function mineFieldGame(){
 
   }
 
-  console.log(punteggio);
+  alert("Hai completato il gioco, complimenti");
+  return console.log("Fine della partita il tuo punteggio è " + steps.length);
+  // console.log("Fine della partita il tuo punteggio è " + steps.length);
 }
 
+
 document.getElementById('startbutton').onclick = function(){mineFieldGame()};
-// console.log(steps);
