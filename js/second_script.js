@@ -24,6 +24,28 @@
 // Le validazioni e i controlli possiamo farli anche in un secondo momento.
 // Ricordatevi che se non sappiamo quante volte dobbiamo fare una cosa ci serve…
 
+
+// Impostazione di una funzione per la scelta del livello di difficolta
+
+
+var level = prompt("Scegli un livello di difficolta, inserisci '0' per il livello easy, '1' per livello medium e '2' per il livello difficult ");
+if (level == 0){
+
+  var min = 1;
+  var max = 20;
+} else if (level == 1){
+
+  var min = 1;
+  var max = 15;
+} else if (level == 2){
+
+  var min = 1;
+  var max = 10;
+}
+
+console.log(min, max);
+
+
 // Impostazione di una funzione per il calcolo di numeri random
 
 function getRandom(min, max){
@@ -45,12 +67,12 @@ function minesInTheField(){
 
   var mines = [];
 
-  for (i = 0; i < 10; i++){
+  for (i = 0; i < 5; i++){
 
-    var rnd = getRandom(1, 20);
+    var rnd = getRandom(min, max);
     while(mines.includes(rnd)){
 
-      var rnd = getRandom(1, 20);
+      var rnd = getRandom(min, max);
 
     }
     mines.push(rnd);
@@ -71,13 +93,13 @@ function mineFieldGame(){
 
   var steps = [];
   // var punteggio = steps.length;
-  for (i = 0; i < 10; i++){
+  for (i = 0; i < (max - min); i++){
 
-    var playerNum = parseInt(prompt("muovi un passo nel campo minato, inserisci un numero compreso tra 1 e 20"));
+    var playerNum = parseInt(prompt("muovi un passo nel campo minato, inserisci un numero compreso tra " + min +  " e " + max));
     while (steps.includes(playerNum)){
 
-      alert("Hai gia selezionato questo numero. Seleziona un nuovo numero");
-      var playerNum = parseInt(prompt("muovi un passo nel campo minato, inserisci un numero"));
+      alert("Hai gia selezionato questo numero. Seleziona un nuovo");
+      var playerNum = parseInt(prompt("muovi un passo nel campo minato, inserisci un nuovo numero compreso tra " + min + " e " + max));
 
     }
 
