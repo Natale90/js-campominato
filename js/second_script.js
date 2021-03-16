@@ -93,7 +93,7 @@ function mineFieldGame(){
 
   var steps = [];
   // var punteggio = steps.length;
-  for (i = 0; i < (max - min); i++){
+  for (var i = 0; i < (max - 5); i++){
 
     var playerNum = parseInt(prompt("muovi un passo nel campo minato, inserisci un numero compreso tra " + min +  " e " + max));
     while (steps.includes(playerNum)){
@@ -116,7 +116,7 @@ function mineFieldGame(){
   }
 
   alert("Hai completato il gioco, complimenti");
-  return console.log("Fine della partita il tuo punteggio è " + steps.length);
+  return console.log("Hai vinto, il tuo punteggio è " + steps.length);
   // console.log("Fine della partita il tuo punteggio è " + steps.length);
 }
 
